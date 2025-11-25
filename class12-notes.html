@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Class 12 — Notes (Physics • Chemistry • Maths • English • Hindi)</title>
+  <style>
+    :root{
+      --bg:#f5f8fb; --card:#ffffff; --accent:#6a5af9; --muted:#6b7280; --radius:12px; --shadow:0 6px 18px rgba(20,24,40,0.06);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, "Segoe UI", system-ui, Arial; margin:0; background:linear-gradient(180deg,var(--bg),#eef4fb); color:#0f172a}
+    header{background:linear-gradient(90deg,var(--accent),#8f7cff); color:white; padding:28px 20px; text-align:center}
+    header h1{margin:0;font-size:22px}
+    header p{margin:6px 0 0;opacity:0.9}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+    .search{flex:1;min-width:220px}
+    .search input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e6eefb;background:white}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .card h2{margin:0 0 8px;font-size:18px}
+    details{margin-top:12px}
+    summary{cursor:pointer;padding:10px;border-radius:10px;background:#f8fbff;border:1px solid #e3f0ff}
+    .chapter{padding:12px 10px}
+    .chapter h3{margin:0;font-size:15px}
+    .chapter ul{margin:8px 0 0;padding-left:18px}
+    .small{font-size:13px;color:var(--muted)}
+    .footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:12px}
+    .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:10px;border:none;cursor:pointer}
+    @media print{header{display:none}.wrap{margin:0;padding:0}.card{box-shadow:none;border-radius:0}}
+  </style>
+</head>
+<body>
+<header>
+  <h1>📘 Class 12 — Quick Notes</h1>
+  <p>Physics • Chemistry • Mathematics • English • Hindi — concise chapter summaries & formulas</p>
+</header>
+
+<main class="wrap">
+  <div class="controls">
+    <div class="search"><input id="q" placeholder="Search subject, chapter or keyword (e.g. EM waves, aldehydes, matrices)" /></div>
+    <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="grid" id="grid">
+
+    <!-- PHYSICS -->
+    <article class="card" data-subject="physics">
+      <h2>🔬 Physics</h2>
+      <p class="small">Electrostatics, Magnetism, EM waves, Optics, Communication.</p>
+
+      <details open>
+        <summary>Electrostatics</summary>
+        <div class="chapter">
+          <ul>
+            <li>Coulomb’s Law: F = k q₁q₂ / r².</li>
+            <li>Electric field → force per unit charge.</li>
+            <li>Gauss law: Φ = Q / ε₀.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Current Electricity</summary>
+        <div class="chapter">
+          <ul>
+            <li>Ohm’s Law: V = IR.</li>
+            <li>Resistivity ρ depends on temperature.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Optics</summary>
+        <div class="chapter">
+          <ul>
+            <li>Lens formula: 1/f = 1/v + 1/u.</li>
+            <li>Wave optics: interference, diffraction.</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- CHEMISTRY -->
+    <article class="card" data-subject="chemistry">
+      <h2>⚗ Chemistry</h2>
+      <p class="small">Organic, Physical & Inorganic key formulas.</p>
+
+      <details open>
+        <summary>Solid State</summary>
+        <div class="chapter">
+          <ul>
+            <li>Types: crystalline vs amorphous.</li>
+            <li>Unit cell, packing fraction.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Electrochemistry</summary>
+        <div class="chapter">
+          <ul>
+            <li>Nernst equation: E = E° − (0.0591/n) log K.</li>
+            <li>Kohlrausch Law.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Aldehydes & Ketones</summary>
+        <div class="chapter">
+          <ul>
+            <li>Nucleophilic addition reactions.</li>
+            <li>Tollen’s test, Fehling’s test.</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- MATHEMATICS -->
+    <article class="card" data-subject="mathematics">
+      <h2>🔢 Mathematics</h2>
+      <p class="small">Calculus, Matrices, Probability, Vectors.</p>
+
+      <details open>
+        <summary>Matrices</summary>
+        <div class="chapter">
+          <ul>
+            <li>Matrix multiplication rules.</li>
+            <li>Determinants & inverse using adjoint.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Integrals</summary>
+        <div class="chapter">
+          <ul>
+            <li>∫ xⁿ dx = xⁿ⁺¹/(n+1).</li>
+            <li>Substitution, partial fractions.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Probability</summary>
+        <div class="chapter">
+          <ul>
+            <li>P(A) = favorable / total outcomes.</li>
+            <li>Bayes theorem basics.</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- ENGLISH -->
+    <article class="card" data-subject="english">
+      <h2>📕 English</h2>
+      <p class="small">Flamingo & Vistas — short summaries.</p>
+
+      <details open>
+        <summary>Flamingo — Prose</summary>
+        <div class="chapter">
+          <ul>
+            <li>The Last Lesson — patriotism & language.</li>
+            <li>Deep Water — fear & triumph.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Poetry</summary>
+        <div class="chapter">
+          <ul>
+            <li>My Mother at Sixty-Six — aging & emotion.</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- HINDI -->
+    <article class="card" data-subject="hindi">
+      <h2>📝 Hindi</h2>
+      <p class="small">क्षितिज, आरोह — सारांश।</p>
+
+      <details open>
+        <summary>कविता</summary>
+        <div class="chapter">
+          <ul>
+            <li>आत्मबोध, समाज, प्रकृति पर केंद्रित रचनाएँ।</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>गद्य</summary>
+        <div class="chapter">
+          <ul>
+            <li>आलोचनात्मक, कहानी व निबंध आधारित प्रसंग।</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+  </div>
+
+  <div class="footer small">
+    <div>Tip: Use the search bar to filter instantly.</div>
+    <button class="btn" onclick="downloadHTML()">Download HTML</button>
+  </div>
+      <section style="margin-top:20px;text-align:center">
+    <h3>📺 Class 12 — YouTube Playlists (All Subjects)</h3>
+    <p class="small">Click a subject to open its full YouTube playlist</p>
+    <div style="display:flex;flex-direction:column;gap:8px;max-width:360px;margin:0 auto;text-align:left">
+      <a href="https://www.youtube.com/results?search_query=class+12+physics+full+chapter+explanation" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none">🔬 Physics Playlist</a>
+      <a href="https://www.youtube.com/results?search_query=class+12+chemistry+full+chapter+explanation" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none">⚗ Chemistry Playlist</a>
+      <a href="https://www.youtube.com/results?search_query=class+12+maths+full+chapter+explanation" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none">🔢 Mathematics Playlist</a>
+      <a href="https://www.youtube.com/results?search_query=class+12+english+flamingo+vistas+explanation" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none">📕 English Playlist</a>
+      <a href="https://www.youtube.com/results?search_query=class+12+hindi+क्षितिज+आरोह+explanation" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none">📝 Hindi Playlist</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+const q = document.getElementById('q');
+const grid = document.getElementById('grid');
+q.addEventListener('input',()=>{
+  const v = q.value.trim().toLowerCase();
+  [...grid.children].forEach(card=>{
+    card.style.display = card.innerText.toLowerCase().includes(v) ? 'block':'none';
+  });
+});
+
+function downloadHTML(){
+  const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'Class12-Notes.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
