@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Notes</title>
+    <style>
+/* -------------------------
+   Global Reset
+--------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f3f6fa;
+  color: #1b2b4b;
+  padding: 20px;
+  line-height: 1.7;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  background: #0077b6;
+  color: white;
+  padding: 20px;
+  font-size: 38px;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0px 6px 22px rgba(0, 119, 182, 0.35);
+}
+
+/* Container */
+.container {
+  width: min(900px, 95%);
+  margin: 25px auto;
+}
+
+/* Section Boxes */
+.section {
+  background: #ffffff;
+  padding: 22px;
+  margin-top: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+  color: #0077b6;
+  border-left: 6px solid #0077b6;
+  padding-left: 12px;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.section ul {
+  margin-left: 18px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+/* Code Blocks */
+.code {
+  background: #0d1b2a;
+  color: #fff;
+  padding: 14px;
+  font-family: "Courier New";
+  border-radius: 10px;
+  margin-top: 12px;
+  white-space: pre;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #444;
+}
+    </style>
+</head>
+
+<body>
+
+<div class="header">CSS Notes</div>
+
+<div class="container">
+
+    <!-- INTRO -->
+    <div class="section">
+        <h2>1. What is CSS?</h2>
+        <p>CSS (Cascading Style Sheets) is used to style and layout web pages. It controls colors, fonts, spacing, responsiveness, and animations.</p>
+    </div>
+
+    <!-- SYNTAX -->
+    <div class="section">
+        <h2>2. CSS Basic Syntax</h2>
+        <div class="code">
+selector {
+    property: value;
+}
+        </div>
+    </div>
+
+    <!-- TYPES -->
+    <div class="section">
+        <h2>3. Types of CSS</h2>
+        <ul>
+            <li><b>Inline CSS</b></li>
+            <li><b>Internal CSS</b></li>
+            <li><b>External CSS</b></li>
+        </ul>
+
+        <h3>Inline CSS Example:</h3>
+        <div class="code">
+&lt;h1 style="color:red;"&gt;Hello&lt;/h1&gt;
+        </div>
+
+        <h3>Internal CSS Example:</h3>
+        <div class="code">
+&lt;style&gt;
+p { color: blue; }
+&lt;/style&gt;
+        </div>
+
+        <h3>External CSS Example:</h3>
+        <div class="code">
+&lt;link rel="stylesheet" href="style.css"&gt;
+        </div>
+    </div>
+
+    <!-- COLORS -->
+    <div class="section">
+        <h2>4. Colors in CSS</h2>
+        <ul>
+            <li>Color names (red, blue)</li>
+            <li>Hex codes (#ff0000)</li>
+            <li>RGB (rgb(255,0,0))</li>
+            <li>RGBA (rgba(255,0,0,0.5))</li>
+        </ul>
+
+        <div class="code">
+p { 
+    color: #ff5733; 
+}
+        </div>
+    </div>
+
+    <!-- FONT PROPERTIES -->
+    <div class="section">
+        <h2>5. Font Properties</h2>
+
+        <ul>
+            <li>font-size</li>
+            <li>font-weight</li>
+            <li>font-style</li>
+            <li>font-family</li>
+        </ul>
+
+        <div class="code">
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+        </div>
+    </div>
+
+    <!-- BOX MODEL -->
+    <div class="section">
+        <h2>6. Box Model</h2>
+
+        <p>Every element has:</p>
+        <ul>
+            <li>Content</li>
+            <li>Padding</li>
+            <li>Border</li>
+            <li>Margin</li>
+        </ul>
+
+        <div class="code">
+div {
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid black;
+}
+        </div>
+    </div>
+
+    <!-- DISPLAY -->
+    <div class="section">
+        <h2>7. Display Property</h2>
+
+        <ul>
+            <li>block</li>
+            <li>inline</li>
+            <li>inline-block</li>
+            <li>flex</li>
+            <li>grid</li>
+        </ul>
+
+        <div class="code">
+div {
+    display: flex;
+}
+        </div>
+    </div>
+
+    <!-- POSITION -->
+    <div class="section">
+        <h2>8. Positioning</h2>
+        <ul>
+            <li>static</li>
+            <li>relative</li>
+            <li>absolute</li>
+            <li>fixed</li>
+            <li>sticky</li>
+        </ul>
+
+        <div class="code">
+.box {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+        </div>
+    </div>
+
+    <!-- FLEXBOX -->
+    <div class="section">
+        <h2>9. Flexbox</h2>
+        <ul>
+            <li>justify-content</li>
+            <li>align-items</li>
+            <li>flex-direction</li>
+            <li>gap</li>
+        </ul>
+
+        <div class="code">
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+        </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="section">
+        <h2>10. CSS Grid</h2>
+
+        <div class="code">
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+        </div>
+    </div>
+
+    <!-- ANIMATIONS -->
+    <div class="section">
+        <h2>11. Animations</h2>
+
+        <div class="code">
+@keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+div {
+    animation: fade 2s ease-in;
+}
+        </div>
+    </div>
+
+    <!-- PRACTICE -->
+    <div class="section">
+        <h2>12. Practice Questions</h2>
+        <ul>
+            <li>Create a box with padding, margin, and border.</li>
+            <li>Use flexbox to center a div.</li>
+            <li>Make a 3-column grid layout.</li>
+        </ul>
+    </div>
+
+    <!-- VIDEO LINK -->
+    <div class="section">
+        <h2>13. Helpful Video Tutorial</h2>
+        <p>Watch this useful CSS tutorial:</p>
+        <a href="https://youtu.be/ESnrn1kAD4E?si=iE8lLoJwffhmx0Vi" 
+           target="_blank" 
+           style="color:#0077b6; font-weight:600;">
+           Click here to watch the CSS Crash Course (YouTube)
+        </a>
+    </div>
+
+    <div class="footer">© 2025 – CSS Notes by Krishika</div>
+
+</div>
+
+</body>
+</html>
