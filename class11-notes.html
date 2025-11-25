@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Class 11 — Notes (Physics • Chemistry • Maths • English • Hindi)</title>
+  <style>
+    :root{
+      --bg:#f5f8fb; --card:#ffffff; --accent:#2b8cff; --muted:#6b7280; --radius:12px; --shadow: 0 6px 18px rgba(20,24,40,0.06);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, "Segoe UI", system-ui, -apple-system, Arial; margin:0; background:linear-gradient(180deg,var(--bg),#eef4fb); color:#0f172a}
+    header{background:linear-gradient(90deg,var(--accent),#3ab0ff); color:white; padding:28px 20px; text-align:center}
+    header h1{margin:0;font-size:20px;letter-spacing:0.2px}
+    header p{margin:6px 0 0;opacity:0.95}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+    .search{flex:1;min-width:220px}
+    .search input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e6eefb;background:white}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .card h2{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    details{margin-top:12px}
+    summary{cursor:pointer;padding:10px;border-radius:10px;background:#f8fbff;border:1px solid #e3f0ff}
+    .chapter{padding:12px 10px}
+    .chapter h3{margin:0;font-size:15px}
+    .chapter ul{margin:8px 0 0;padding-left:18px}
+    .small{font-size:13px;color:var(--muted)}
+    .footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:12px}
+
+    /* YouTube button */
+    .yt-btn{
+      display:inline-block;
+      margin-top:10px;
+      background:#ff0000;
+      color:white;
+      padding:8px 12px;
+      border-radius:10px;
+      font-size:14px;
+      text-decoration:none;
+    }
+    .yt-btn:hover{background:#e60000;}
+
+    .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:10px;border:none;cursor:pointer}
+
+    @media (max-width:520px){header h1{font-size:18px}}
+
+    /* print friendly */
+    @media print{
+      body{background:white}
+      header{display:none}
+      .wrap{margin:0;padding:0}
+      .card{box-shadow:none;border-radius:0}
+      .yt-btn{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📘 Class 11 — Quick Notes</h1>
+    <p>Physics • Chemistry • Mathematics • English • Hindi — concise chapter summaries & formulas</p>
+  </header>
+
+  <main class="wrap">
+    <div class="controls">
+      <div class="search"><input id="q" placeholder="Search subject, chapter or keyword (e.g. projectile, mole, trigonometry)" /></div>
+      <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <!-- PHYSICS -->
+      <article class="card" data-subject="physics">
+        <h2>🔬 Physics</h2>
+        <p class="small">Core ideas, key formulas and short chapter summaries.</p>
+
+        <a class="yt-btn" href="https://youtube.com/playlist?list=YOUR_PHYSICS_LINK" target="_blank">📺 Physics YouTube</a>
+
+        <details open>
+          <summary>Chapter 1 — Physical World</summary>
+          <div class="chapter">
+            <h3>Key points</h3>
+            <ul>
+              <li>Science cycle: Observation → Hypothesis → Experiment → Theory → Law.</li>
+              <li>Fundamental forces: gravitational, electromagnetic, strong nuclear, weak nuclear.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Chapter 2 — Units & Measurements</summary>
+          <div class="chapter">
+            <ul>
+              <li>SI base units: m, kg, s, A, K, mol, cd.</li>
+              <li>Errors: systematic vs random; significant figures; least count.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Chapter 3 — Motion in a Straight Line</summary>
+          <div class="chapter">
+            <ul>
+              <li>Equations: v = u + at; s = ut + 1/2 at²; v² = u² + 2as.</li>
+              <li>Graphs: x–t, v–t, a–t; interpretation of slopes & areas.</li>
+            </ul>
+          </div>
+        </details>
+
+      </article>
+
+      <!-- CHEMISTRY -->
+      <article class="card" data-subject="chemistry">
+        <h2>⚗ Chemistry</h2>
+        <p class="small">Mole concept, atomic structure, periodic trends and quick formulas.</p>
+
+        <a class="yt-btn" href="https://youtube.com/playlist?list=YOUR_CHEMISTRY_LINK" target="_blank">📺 Chemistry YouTube</a>
+
+        <details open>
+          <summary>Chapter 1 — Some Basic Concepts</summary>
+          <div class="chapter">
+            <ul>
+              <li>Mole = 6.022×10²³ entities. Molarity (M) = moles / L; Molality (m) = moles / kg solvent.</li>
+              <li>Empirical vs molecular formula; stoichiometry basics.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Chapter 2 — Structure of Atom</summary>
+          <div class="chapter">
+            <ul>
+              <li>Models: Thomson, Rutherford, Bohr. Quantum numbers: n, l, m, s.</li>
+              <li>Orbital shapes: s (sphere), p (dumbbell), d (clover-like).</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <!-- MATHEMATICS -->
+      <article class="card" data-subject="mathematics">
+        <h2>🔢 Mathematics</h2>
+        <p class="small">Definitions, identities and quick-problem reminders.</p>
+
+        <a class="yt-btn" href="https://youtube.com/playlist?list=YOUR_MATHS_LINK" target="_blank">📺 Maths YouTube</a>
+
+        <details open>
+          <summary>Sets</summary>
+          <div class="chapter">
+            <ul>
+              <li>Union (∪), Intersection (∩), Complement ('). Venn diagrams for 2–3 sets.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Relations & Functions</summary>
+          <div class="chapter">
+            <ul>
+              <li>Function: single-valued mapping f: A → B. Domain, codomain, range.</li>
+            </ul>
+          </div>
+        </details>
+
+      </article>
+
+      <!-- ENGLISH -->
+      <article class="card" data-subject="english">
+        <h2>📕 English</h2>
+        <p class="small">Short summaries of prose & poems.</p>
+
+        <a class="yt-btn" href="https://youtube.com/playlist?list=YOUR_ENGLISH_LINK" target="_blank">📺 English YouTube</a>
+
+        <details open>
+          <summary>Hornbill — Prose (selected)</summary>
+          <div class="chapter">
+            <ul>
+              <li>The Portrait of a Lady — family, memory, narrator's reflections.</li>
+              <li>We’re Not Afraid to Die... — survival story; leadership & courage.</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <!-- HINDI -->
+      <article class="card" data-subject="hindi">
+        <h2>📝 Hindi</h2>
+        <p class="small">Gist of selected prose & poetry.</p>
+
+        <a class="yt-btn" href="https://youtube.com/playlist?list=YOUR_HINDI_LINK" target="_blank">📺 Hindi YouTube</a>
+
+        <details open>
+          <summary>कविताएँ (Selected)</summary>
+          <div class="chapter">
+            <ul>
+              <li>जीवन-यात्रा, भावनाओं का संक्षेप — (उदाहरण कविताएँ: पथिक, रूमी)।</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+    </div>
+
+    <div class="footer small">
+      <div>Tip: Use the search box to filter subject cards. Click a chapter to expand.</div>
+      <div><button class="btn" onclick="downloadHTML()">Download HTML</button></div>
+    </div>
+  </main>
+
+  <script>
+    const q = document.getElementById('q');
+    const grid = document.getElementById('grid');
+    q.addEventListener('input', ()=>{
+      const v = q.value.trim().toLowerCase();
+      [...grid.children].forEach(card=>{
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(v) ? 'block' : 'none';
+      });
+    });
+
+    function downloadHTML(){
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'Class11-Notes.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
