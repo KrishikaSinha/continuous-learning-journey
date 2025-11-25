@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Notes</title>
+    <style>
+/* -------------------------
+   Global Reset
+--------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fa;
+  color: #1d2d50;
+  padding: 20px;
+  line-height: 1.7;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  background: #ff6b35;
+  color: white;
+  padding: 18px;
+  font-size: 38px;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+/* Container */
+.container {
+  width: min(900px, 95%);
+  margin: 25px auto;
+}
+
+/* Section Box */
+.section {
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+  color: #ff6b35;
+  border-left: 6px solid #ff6b35;
+  padding-left: 12px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.section p,
+.section ul {
+  margin-top: 10px;
+}
+
+/* Code Block */
+.code {
+  background: #1d2d50;
+  color: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  font-family: "Courier New";
+  margin-top: 12px;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+/* Styled Link Button */
+.link-btn {
+  display: inline-block;
+  background: #ff6b35;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 12px;
+  box-shadow: 0px 5px 15px rgba(255, 107, 53, 0.4);
+  transition: 0.3s;
+}
+
+.link-btn:hover {
+  background: #e85a28;
+  transform: translateY(-2px);
+}
+
+/* List bullets */
+ul {
+  padding-left: 25px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #555;
+}
+    </style>
+</head>
+
+<body>
+
+<div class="header">HTML Notes</div>
+
+<div class="container">
+
+    <!-- INTRO -->
+    <div class="section">
+        <h2>1. What is HTML?</h2>
+        <p>HTML (HyperText Markup Language) is the standard language used to structure webpages. It defines the content and layout of a website.</p>
+    </div>
+
+    <!-- STRUCTURE -->
+    <div class="section">
+        <h2>2. Basic HTML Structure</h2>
+        <p>Every HTML document follows this structure:</p>
+
+        <div class="code">
+&lt;!DOCTYPE html&gt;  
+&lt;html&gt;  
+&nbsp;&nbsp;&lt;head&gt;  
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Page&lt;/title&gt;  
+&nbsp;&nbsp;&lt;/head&gt;  
+&nbsp;&nbsp;&lt;body&gt;  
+&nbsp;&nbsp;&nbsp;&nbsp;Content goes here  
+&nbsp;&nbsp;&lt;/body&gt;  
+&lt;/html&gt;
+        </div>
+    </div>
+
+    <!-- TAGS -->
+    <div class="section">
+        <h2>3. HTML Tags</h2>
+        <p>HTML uses tags to define elements. Example:</p>
+
+        <ul>
+            <li><b>&lt;h1&gt;</b> – Heading</li>
+            <li><b>&lt;p&gt;</b> – Paragraph</li>
+            <li><b>&lt;a&gt;</b> – Link</li>
+            <li><b>&lt;img&gt;</b> – Image</li>
+            <li><b>&lt;div&gt;</b> – Container</li>
+        </ul>
+    </div>
+
+    <!-- HEADINGS -->
+    <div class="section">
+        <h2>4. Headings</h2>
+        <p>HTML provides 6 levels of headings:</p>
+
+        <div class="code">
+&lt;h1&gt; Main Heading &lt;/h1&gt;  
+&lt;h2&gt; Sub Heading &lt;/h2&gt;  
+&lt;h3&gt; Section Title &lt;/h3&gt;
+        </div>
+    </div>
+
+    <!-- PARAGRAPHS -->
+    <div class="section">
+        <h2>5. Paragraphs</h2>
+
+        <div class="code">
+&lt;p&gt; This is a paragraph. &lt;/p&gt;
+        </div>
+    </div>
+
+    <!-- LINKS -->
+    <div class="section">
+        <h2>6. Links</h2>
+
+        <div class="code">
+&lt;a href="https://google.com"&gt; Visit Google &lt;/a&gt;<br>
+&lt;a href="https://youtu.be/HcOc7P5BMi4?si=7OhHK-TiG8ydp-UO"&gt; HTML Tutorial Video &lt;/a&gt;
+        </div>
+
+        <!-- Styled button link -->
+        <a class="link-btn" href="https://youtu.be/HcOc7P5BMi4?si=7OhHK-TiG8ydp-UO" target="_blank">
+            Watch HTML Tutorial Video
+        </a>
+
+    </div>
+
+    <!-- IMAGES -->
+    <div class="section">
+        <h2>7. Images</h2>
+
+        <div class="code">
+&lt;img src="image.jpg" width="300" /&gt;
+        </div>
+    </div>
+
+    <!-- LISTS -->
+    <div class="section">
+        <h2>8. Lists in HTML</h2>
+
+        <h3>Ordered List:</h3>
+        <div class="code">
+&lt;ol&gt;  
+&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt;  
+&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt;  
+&lt;/ol&gt;
+        </div>
+
+        <h3>Unordered List:</h3>
+        <div class="code">
+&lt;ul&gt;  
+&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt;  
+&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt;  
+&lt;/ul&gt;
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="section">
+        <h2>9. Table</h2>
+        <div class="code">
+&lt;table border="1"&gt;  
+&nbsp;&nbsp;&lt;tr&gt;  
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;  
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Age&lt;/th&gt;  
+&nbsp;&nbsp;&lt;/tr&gt;  
+&nbsp;&nbsp;&lt;tr&gt;  
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;John&lt;/td&gt;  
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;20&lt;/td&gt;  
+&nbsp;&nbsp;&lt;/tr&gt;  
+&lt;/table&gt;
+        </div>
+    </div>
+
+    <!-- FORMS -->
+    <div class="section">
+        <h2>10. Forms</h2>
+
+        <div class="code">
+&lt;form&gt;  
+&nbsp;&nbsp;Name: &lt;input type="text"&gt; &lt;br&gt;  
+&nbsp;&nbsp;Email: &lt;input type="email"&gt; &lt;br&gt;  
+&nbsp;&nbsp;&lt;button&gt;Submit&lt;/button&gt;  
+&lt;/form&gt;
+        </div>
+    </div>
+
+    <!-- SEMANTIC -->
+    <div class="section">
+        <h2>11. Semantic Tags</h2>
+        <ul>
+            <li>&lt;header&gt;</li>
+            <li>&lt;footer&gt;</li>
+            <li>&lt;nav&gt;</li>
+            <li>&lt;section&gt;</li>
+            <li>&lt;article&gt;</li>
+        </ul>
+    </div>
+
+    <!-- PRACTICE -->
+    <div class="section">
+        <h2>12. Practice Questions</h2>
+        <ul>
+            <li>Create a webpage with heading, paragraph and image.</li>
+            <li>Create a form with name, email and submit button.</li>
+            <li>Make a table of 3 rows and 3 columns.</li>
+        </ul>
+    </div>
+
+    <div class="footer">© 2025 – HTML Notes by Krishika</div>
+
+</div>
+
+</body>
+</html>
