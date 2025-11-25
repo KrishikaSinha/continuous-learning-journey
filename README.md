@@ -19,8 +19,8 @@ In summary, Continuous Learning Journey is more than just a repository of notes.
 ---
 
 # 🛠️ Technologies Used
--HTML
+- HTML
 
--CSS
+- CSS
 
--JavaScript
+- JavaScript
