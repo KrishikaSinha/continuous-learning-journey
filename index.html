@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LMS — Login</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#6ee7b7;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(180deg,#071022 0%, #082033 50%, #0b1220 100%);color:#e6eef6;
+      padding:32px;
+      overflow:hidden;
+    }
+
+    .particles{
+      position:fixed;inset:0;z-index:-1;overflow:hidden;
+    }
+    .particle{
+      position:absolute;width:6px;height:6px;background:#6ee7b7;border-radius:50%;opacity:0.15;
+      animation: float 12s linear infinite;
+    }
+    @keyframes float{
+      0%{transform:translateY(0) translateX(0);}
+      100%{transform:translateY(-120vh) translateX(20vw);}
+    }
+
+    .container{
+      width:100%;max-width:980px;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);}
+    }
+
+    .branding{
+      padding:28px;border-radius:var(--radius);background:var(--glass);
+      box-shadow:0 6px 30px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter:blur(12px);
+      animation: slideLeft 1s ease;
+    }
+    @keyframes slideLeft{from{opacity:0;transform:translateX(-30px);}to{opacity:1;transform:translateX(0);}}
+
+    .branding h1{margin:0;font-size:28px;letter-spacing:-0.3px}
+    .branding p{color:var(--muted);margin-top:10px;line-height:1.5}
+
+    .features{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+    .feature-card{flex:1 1 200px;background:var(--glass);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(10px);transition:transform .25s}
+    .feature-card:hover{transform:translateY(-4px)}
+
+    .login{
+      background:var(--glass);padding:26px;border-radius:var(--radius);
+      box-shadow:0 10px 40px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter:blur(16px);
+      animation: slideRight 1s ease;
+    }
+    @keyframes slideRight{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+
+    .option-toggle{display:flex;gap:10px;margin-bottom:18px}
+    .option{
+      flex:1;padding:10px;border-radius:10px;text-align:center;cursor:pointer;
+      border:1px solid transparent;background:transparent;color:var(--muted);transition:all .18s;
+    }
+    .option.active{
+      background:rgba(110,231,183,0.1);
+      border-color:rgba(110,231,183,0.4);
+      color:var(--accent);
+      box-shadow:0 6px 18px rgba(2,6,23,0.5);
+    }
+
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-size:13px;color:var(--muted)}
+    input{
+      width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.03);color:#e6eef6;font-size:14px;
+      transition:0.2s;
+    }
+    input:focus{border-color:var(--accent);box-shadow:0 0 12px rgba(110,231,183,0.3)}
+
+    .submit-btn{
+      padding:12px;border-radius:12px;border:none;
+      background:linear-gradient(90deg,#34d399,#06b6d4);
+      color:#042022;font-weight:600;cursor:pointer;font-size:15px;
+      transition:0.25s;
+    }
+    .submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,0.4)}
+
+  </style>
+</head>
+<body>
+
+<div class="particles" id="particleContainer"></div>
+
+  <div class="container">
+    <aside class="branding">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo">L</div>
+        <div>
+          <h1>Continuous Learning Journey</h1>
+          <p>Centralized notes, quick review tools and study paths for both college and school students.</p>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feature-card"><h3>Organized Notes</h3><p>Enhances learning with structured materials.</p></div>
+        <div class="feature-card"><h3>Fast Revision</h3><p>Quickly review your key concepts.</p></div>
+        <div class="feature-card"><h3>Share & Collaborate</h3><p>Work together for collective success.</p></div>
+      </div>
+    </aside>
+
+    <main class="login">
+      <h2>Welcome back</h2>
+      <h3>“Team up to dream up!”</h3>
+      <p class="sub">Sign in and choose your notes type.</p>
+
+      <div class="option-toggle">
+        <button class="option active" data-value="college">College Notes</button>
+        <button class="option" data-value="school">School Notes</button>
+      </div>
+
+      <form id="loginForm" method="POST">
+        <input type="hidden" id="notes_type" value="college">
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="you@domain.com" required>
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+
+        <button class="submit-btn" type="submit">Sign in</button>
+      </form>
+    </main>
+  </div>
+
+<script>
+  // Toggle selection
+  const opts = document.querySelectorAll('.option');
+  const hidden = document.getElementById('notes_type');
+  opts.forEach(btn => btn.addEventListener('click', () => {
+    opts.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    hidden.value = btn.dataset.value;
+  }));
+
+  // Submit + Redirect to 2.html
+  const loginForm = document.getElementById('loginForm');
+  const emailInput = document.getElementById('email');
+  loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert(`Logging in as ${emailInput.value} — accessing: ${hidden.value} notes`);
+    window.location.href = "2.html";  // <-- Redirect here
+  });
+
+  // Floating particles
+  const container = document.getElementById("particleContainer");
+  for(let i=0;i<40;i++){
+    const dot = document.createElement('div');
+    dot.className='particle';
+    dot.style.left = Math.random()*100+'vw';
+    dot.style.top = (Math.random()*120+100)+'vh';
+    dot.style.animationDuration = (10+Math.random()*10)+'s';
+    dot.style.opacity = Math.random()*0.3;
+    container.appendChild(dot);
+  }
+</script>
+</body>
+</html>
