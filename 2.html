@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp Learning — Courses</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #eef3ff;
+        }
+
+        /* NAVBAR */
+        .navbar { 
+            background: linear-gradient(90deg, #0b63ce, #0a4ea0);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* MAIN */
+        .courses {
+            text-align: center;
+            padding: 40px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity:0; transform: translateY(20px);}
+            to {opacity:1; transform: translateY(0);}
+        }
+
+        /* SEARCH & FILTER */
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .searchBox, .filterBox {
+            padding: 10px 14px;
+            width: 260px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .course-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding-top: 30px;
+        }
+
+        /* COURSE CARDS */
+        .course-card {
+            width: 280px;
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform .3s ease, box-shadow .3s ease;
+            opacity: 0;
+            animation: cardFade 1s forwards;
+        }
+
+        /* Stagger animation */
+        .course-card:nth-child(1){animation-delay:.2s;}
+        .course-card:nth-child(2){animation-delay:.35s;}
+        .course-card:nth-child(3){animation-delay:.5s;}
+        .course-card:nth-child(4){animation-delay:.65s;}
+        .course-card:nth-child(5){animation-delay:.8s;}
+
+        @keyframes cardFade {
+            from {opacity:0; transform:translateY(20px);}
+            to {opacity:1; transform:translateY(0);}
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #0b63ce;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background .3s;
+        }
+
+        .btn:hover {
+            background: #094c9b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <h1>SkillUp Learning</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="courses">
+        <h2>Explore Our Courses</h2>
+
+        <!-- SEARCH + FILTER -->
+        <div class="controls">
+            <input type="text" id="searchBox" class="searchBox" placeholder="Search courses...">
+            <select id="filterBox" class="filterBox">
+                <option value="all">All Categories</option>
+                <option value="web">Web Development</option>
+                <option value="school">School Notes</option>
+            </select>
+        </div>
+
+        <div class="course-container" id="courseList">
+
+            <div class="course-card" data-category="web">
+                <h3>Frontend Development with HTML</h3>
+                <p>Learn the structure of web pages with semantic HTML.</p>
+                <a href="html-notes.html" class="btn">Start Course</a>
+            </div>
+
+            <div class="course-card" data-category="web">
+                <h3>Styling Websites with CSS</h3>
+                <p>Learn Flexbox, Grid, animations, and responsive design.</p>
+                <a href="css-notes.html" class="btn">Start Course</a>
+            </div>
+
+            <div class="course-card" data-category="web">
+                <h3>Dynamic Web Programming with JavaScript</h3>
+                <p>Learn DOM manipulation, events, and modern JS.</p>
+                <a href="js-notes.html" class="btn">Start Course</a>
+            </div>
+
+            <div class="course-card" data-category="school">
+                <h3>Class 11 — Full Notes</h3>
+                <p>Physics • Chemistry • Maths • English • Hindi — NCERT based.</p>
+                <a href="class11-notes.html" class="btn">Open Notes</a>
+            </div>
+
+            <div class="course-card" data-category="school">
+                <h3>Class 12 — Full Notes</h3>
+                <p>Complete syllabus notes, summary & formulas.</p>
+                <a href="class12-notes.html" class="btn">Open Notes</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const searchBox = document.getElementById("searchBox");
+        const filterBox = document.getElementById("filterBox");
+        const cards = document.querySelectorAll(".course-card");
+
+        function filterCourses() {
+            let searchText = searchBox.value.toLowerCase();
+            let category = filterBox.value;
+
+            cards.forEach(card => {
+                let title = card.querySelector("h3").innerText.toLowerCase();
+                let cardCategory = card.dataset.category;
+
+                let matchesSearch = title.includes(searchText);
+                let matchesCategory = category === "all" || cardCategory === category;
+
+                if(matchesSearch && matchesCategory) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        searchBox.addEventListener("input", filterCourses);
+        filterBox.addEventListener("change", filterCourses);
+    </script>
+
+</body>
+</html>
