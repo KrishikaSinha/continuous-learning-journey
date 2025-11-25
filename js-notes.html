@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Notes</title>
+    <style>
+        /* notes-style.css */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f7fbff 0%, #ffffff 60%);
+  color: #213547;
+  line-height: 1.6;
+}
+
+.container {
+  width: min(900px, 94%);
+  margin: 0 auto;
+}
+
+.notes-header {
+  background: #0b63ce;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(11,99,206,0.18);
+}
+
+.section {
+  background: white;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(36,59,80,0.06);
+}
+
+.section h2 {
+  color: #0b3a66;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.section h3 {
+  color: #244763;
+  margin-top: 12px;
+}
+
+.section p {
+  margin: 8px 0;
+  color: #3b4a57;
+}
+
+.code-block {
+  background: #f3f7fb;
+  border-left: 4px solid #0b63ce;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+  font-family: "Courier New";
+  font-size: 15px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.footer {
+  text-align: center;
+  margin: 30px 0;
+  color: #61738a;
+}
+
+/* Button style for video link */
+.video-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  background: #0b63ce;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(11,99,206,0.25);
+  transition: 0.2s;
+}
+
+.video-link:hover {
+  background: #094fa5;
+}
+    </style>
+</head>
+
+<body>
+
+<header class="notes-header">
+    JavaScript Notes
+</header>
+
+<div class="container">
+
+    <!-- BASIC -->
+    <div class="section">
+        <h2>1. Introduction to JavaScript</h2>
+        <p>JavaScript is a high-level, dynamic programming language used for:</p>
+        <ul>
+            <li>Making webpages interactive</li>
+            <li>Handling events</li>
+            <li>Creating dynamic content</li>
+            <li>Backend development (Node.js)</li>
+        </ul>
+    </div>
+
+    <!-- VARIABLES -->
+    <div class="section">
+        <h2>2. Variables</h2>
+
+        <h3>Types of Variables</h3>
+        <ul>
+            <li><b>var</b> – function-scoped</li>
+            <li><b>let</b> – block-scoped</li>
+            <li><b>const</b> – cannot be reassigned</li>
+        </ul>
+
+        <div class="code-block">
+let x = 10;
+var y = 20;
+const z = 30;
+        </div>
+    </div>
+
+    <!-- DATATYPES -->
+    <div class="section">
+        <h2>3. Data Types</h2>
+        <p>JavaScript has 2 types of data:</p>
+
+        <h3>Primitive</h3>
+        <ul>
+            <li>String</li>
+            <li>Number</li>
+            <li>Boolean</li>
+            <li>Null</li>
+            <li>Undefined</li>
+            <li>Symbol</li>
+            <li>BigInt</li>
+        </ul>
+
+        <h3>Non-Primitive</h3>
+        <ul>
+            <li>Objects</li>
+            <li>Arrays</li>
+            <li>Functions</li>
+        </ul>
+
+        <div class="code-block">
+let name = "Krishika";
+let age = 18;
+let isStudent = true;
+        </div>
+    </div>
+
+    <!-- OPERATORS -->
+    <div class="section">
+        <h2>4. Operators</h2>
+        <ul>
+            <li>Arithmetic (+, -, *, /, %)</li>
+            <li>Comparison (==, ===, !=, >, <)</li>
+            <li>Logical (&&, ||, !)</li>
+            <li>Assignment (=, +=, -=)</li>
+        </ul>
+        <div class="code-block">
+let a = 10;
+let b = 5;
+console.log(a + b);  // 15
+        </div>
+    </div>
+
+    <!-- FUNCTIONS -->
+    <div class="section">
+        <h2>5. Functions</h2>
+
+        <h3>Normal Function</h3>
+        <div class="code-block">
+function greet() {
+    console.log("Hello World");
+}
+greet();
+        </div>
+
+        <h3>Arrow Function</h3>
+        <div class="code-block">
+const add = (a, b) => a + b;
+console.log(add(5, 10));
+        </div>
+    </div>
+
+    <!-- DOM -->
+    <div class="section">
+        <h2>6. DOM Manipulation</h2>
+
+        <h3>Selecting Elements</h3>
+        <div class="code-block">
+document.getElementById("title");
+document.querySelector(".box");
+        </div>
+
+        <h3>Changing Content</h3>
+        <div class="code-block">
+document.getElementById("demo").innerHTML = "Updated!";
+        </div>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="section">
+        <h2>7. Events</h2>
+        <p>Events are actions performed by the user.</p>
+
+        <div class="code-block">
+document.getElementById("btn").onclick = function() {
+    alert("Button Clicked");
+}
+        </div>
+    </div>
+
+    <!-- LOOPS -->
+    <div class="section">
+        <h2>8. Loops</h2>
+
+        <h3>For Loop</h3>
+        <div class="code-block">
+for(let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+        </div>
+
+        <h3>While Loop</h3>
+        <div class="code-block">
+let x = 1;
+while(x <= 5) {
+    console.log(x);
+    x++;
+}
+        </div>
+    </div>
+
+    <!-- ARRAYS -->
+    <div class="section">
+        <h2>9. Arrays</h2>
+
+        <div class="code-block">
+let fruits = ["Apple", "Banana", "Mango"];
+fruits.push("Orange");
+console.log(fruits);
+        </div>
+    </div>
+
+    <!-- OBJECTS -->
+    <div class="section">
+        <h2>10. Objects</h2>
+
+        <div class="code-block">
+let person = {
+    name: "Krishika",
+    age: 18,
+    city: "Gurgaon"
+};
+console.log(person.name);
+        </div>
+    </div>
+
+    <!-- CONDITIONAL -->
+    <div class="section">
+        <h2>11. Conditionals</h2>
+
+        <div class="code-block">
+let age = 20;
+
+if(age >= 18) {
+    console.log("Adult");
+} else {
+    console.log("Minor");
+}
+        </div>
+    </div>
+
+    <!-- PRACTICE -->
+    <div class="section">
+        <h2>12. Practice Questions</h2>
+        <ul>
+            <li>Write a function to add two numbers.</li>
+            <li>Create an array and print all values.</li>
+            <li>Write a program to check even or odd.</li>
+            <li>Create an object student with 3 properties.</li>
+        </ul>
+    </div>
+
+    <!-- YOUTUBE VIDEO LINK ADDED -->
+    <div class="section">
+        <h2>13. JavaScript Tutorial Video</h2>
+        <p>Watch this beginner-friendly JavaScript tutorial:</p>
+
+        <a class="video-link" href="https://youtu.be/rfObCuGLSek?si=LC29Cwy_Mka5GpCr" target="_blank">
+            📺 Watch JavaScript Tutorial
+        </a>
+    </div>
+
+    <div class="footer">
+        © 2025 – JavaScript Notes by Krishika
+    </div>
+
+</div>
+</body>
+</html>
